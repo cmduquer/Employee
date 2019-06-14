@@ -1,5 +1,8 @@
 package com.employees.employee.model;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -13,8 +16,10 @@ import lombok.ToString;
 @EqualsAndHashCode
 @Setter
 @Getter
+@Document(collection = "employee")
 public class Employee {
-	private Long id;
+	@Id
+	private String id;
 	private Long organizationId;
 	private Long departmentId;
 	private String name;

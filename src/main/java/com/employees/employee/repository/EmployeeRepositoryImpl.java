@@ -5,8 +5,11 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import org.springframework.stereotype.Service;
+
 import com.employees.employee.model.Employee;
 
+@Service
 public class EmployeeRepositoryImpl implements EmployeeRepository {
 	
 	
@@ -14,7 +17,7 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
 
 	@Override
 	public Employee add(Employee employee) {
-		employee.setId((long) (employees.size()+1));
+		employee.setId("" + (employees.size()+1));
 		employees.add(employee);
 		return employee;
 	}
